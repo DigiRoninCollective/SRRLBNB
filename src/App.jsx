@@ -460,16 +460,16 @@ function App() {
                 </motion.p>
                 <motion.div className="social-links" variants={staggerContainer}>
                   {[
-                    { name: "Twitter", icon: "𝕏", color: "#1da1f2", url: "#" },
+                    { name: "X Community", icon: "𝕏", color: "#000000", url: "https://x.com/i/communities/1916929954207375831" },
                     { name: "Telegram", icon: "✈", color: "#0088cc", url: "https://t.me/SRRLonBNB" },
-                    { name: "Discord", icon: "💬", color: "#5865f2", url: "#" },
-                    { name: "Reddit", icon: "🔴", color: "#ff4500", url: "#" }
+                    { name: "YouTube", icon: "▶", color: "#ff0000", url: "https://www.youtube.com/@raptorcrew" },
+                    { name: "Spotify", icon: "♫", color: "#1db954", url: "https://open.spotify.com/track/0VqRtmNBbbtIAHq1qDcrUA" }
                   ].map((social, i) => (
                     <motion.a
                       key={i}
                       href={social.url}
-                      target={social.url !== "#" ? "_blank" : undefined}
-                      rel={social.url !== "#" ? "noopener noreferrer" : undefined}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="social-btn"
                       style={{ background: social.color }}
                       variants={fadeInUp}
