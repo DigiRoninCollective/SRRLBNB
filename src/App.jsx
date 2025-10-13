@@ -460,20 +460,23 @@ function App() {
                 </motion.p>
                 <motion.div className="social-links" variants={staggerContainer}>
                   {[
-                    { name: "Twitter", color: "#1da1f2" },
-                    { name: "Telegram", color: "#0088cc" },
-                    { name: "Discord", color: "#5865f2" },
-                    { name: "Reddit", color: "#ff4500" }
+                    { name: "Twitter", icon: "𝕏", color: "#1da1f2", url: "#" },
+                    { name: "Telegram", icon: "✈", color: "#0088cc", url: "https://t.me/SRRLonBNB" },
+                    { name: "Discord", icon: "💬", color: "#5865f2", url: "#" },
+                    { name: "Reddit", icon: "🔴", color: "#ff4500", url: "#" }
                   ].map((social, i) => (
                     <motion.a
                       key={i}
-                      href="#"
+                      href={social.url}
+                      target={social.url !== "#" ? "_blank" : undefined}
+                      rel={social.url !== "#" ? "noopener noreferrer" : undefined}
                       className="social-btn"
                       style={{ background: social.color }}
                       variants={fadeInUp}
                       whileHover={{ scale: 1.1, y: -5 }}
                       whileTap={{ scale: 0.95 }}
                     >
+                      <span style={{ fontSize: '1.5rem', marginRight: '0.5rem' }}>{social.icon}</span>
                       {social.name}
                     </motion.a>
                   ))}
