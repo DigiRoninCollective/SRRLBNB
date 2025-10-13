@@ -4,12 +4,14 @@ import IntroAnimation from './components/IntroAnimation';
 import WelcomePopup from './components/WelcomePopup';
 import SpotifyPlayer from './components/SpotifyPlayer';
 import AnimatedBackground from './components/AnimatedBackground';
+import { translations } from './translations';
 import './App.css';
 
 function App() {
   const [showIntro, setShowIntro] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [showContent, setShowContent] = useState(true);
+  const [language, setLanguage] = useState('en');
 
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -23,6 +25,12 @@ function App() {
     setShowPopup(false);
     setShowContent(true);
   };
+
+  const toggleLanguage = () => {
+    setLanguage(prev => prev === 'en' ? 'zh' : 'en');
+  };
+
+  const t = translations[language];
 
   // Fade-in animation variants
   const fadeInUp = {
@@ -79,28 +87,50 @@ function App() {
                   className="nav-brand gradient-text-blue"
                   whileHover={{ scale: 1.05 }}
                 >
-                  🦈🦖🚀 SRRL.FUN
-                  <span style={{
-                    fontSize: '0.6rem',
-                    marginLeft: '0.5rem',
-                    color: '#ffd700',
-                    textShadow: '0 0 10px #ffd700'
-                  }}>
-                    鲨鱼猛禽火箭发射器
-                  </span>
+                  {t.nav.brand}
+                  {language === 'en' && (
+                    <span style={{
+                      fontSize: '0.6rem',
+                      marginLeft: '0.5rem',
+                      color: '#ffd700',
+                      textShadow: '0 0 10px #ffd700'
+                    }}>
+                      鲨鱼猛禽火箭发射器
+                    </span>
+                  )}
                 </motion.div>
                 <div className="nav-links">
-                  <a href="#about">About</a>
-                  <a href="#tokenomics">Tokenomics</a>
-                  <a href="#roadmap">Roadmap</a>
-                  <a href="#community">Community</a>
+                  <a href="#about">{t.nav.about}</a>
+                  <a href="#tokenomics">{t.nav.tokenomics}</a>
+                  <a href="#roadmap">{t.nav.roadmap}</a>
+                  <a href="#community">{t.nav.community}</a>
+                  <motion.button
+                    onClick={toggleLanguage}
+                    className="language-toggle"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    style={{
+                      background: 'linear-gradient(145deg, #ffd700, #ffb700)',
+                      border: '2px solid #000',
+                      borderRadius: '8px',
+                      padding: '0.5rem 1rem',
+                      color: '#000',
+                      fontWeight: 'bold',
+                      cursor: 'pointer',
+                      fontSize: '0.9rem',
+                      boxShadow: '0 4px 0 #ff6b00, 0 0 15px rgba(255,215,0,0.5)',
+                      fontFamily: "'Press Start 2P', cursive"
+                    }}
+                  >
+                    {language === 'en' ? '中文' : 'EN'}
+                  </motion.button>
                   <motion.a
                     href="#"
                     className="btn btn-primary"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Buy Now
+                    {t.nav.buyNow}
                   </motion.a>
                 </div>
               </div>
@@ -128,7 +158,7 @@ function App() {
                     animate={{ textShadow: ["0 0 20px #00d4ff", "0 0 40px #00d4ff", "0 0 20px #00d4ff"] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    SHARK RAPTOR
+                    {t.hero.title1}
                   </motion.span>
                   <br />
                   <motion.span
@@ -136,29 +166,33 @@ function App() {
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    ROCKET LAUNCHER
+                    {t.hero.title2}
                   </motion.span>
-                  <br />
-                  <motion.span
-                    className="chinese-text"
-                    style={{
-                      fontSize: '2rem',
-                      color: '#ffd700',
-                      textShadow: '0 0 20px #ffd700, 0 0 40px #ffd700',
-                      fontWeight: 'bold',
-                      letterSpacing: '0.3rem'
-                    }}
-                    animate={{
-                      textShadow: [
-                        "0 0 20px #ffd700, 0 0 40px #ffd700",
-                        "0 0 30px #ffd700, 0 0 60px #ffd700",
-                        "0 0 20px #ffd700, 0 0 40px #ffd700"
-                      ]
-                    }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    鲨鱼猛禽火箭发射器
-                  </motion.span>
+                  {language === 'en' && (
+                    <>
+                      <br />
+                      <motion.span
+                        className="chinese-text"
+                        style={{
+                          fontSize: '2rem',
+                          color: '#ffd700',
+                          textShadow: '0 0 20px #ffd700, 0 0 40px #ffd700',
+                          fontWeight: 'bold',
+                          letterSpacing: '0.3rem'
+                        }}
+                        animate={{
+                          textShadow: [
+                            "0 0 20px #ffd700, 0 0 40px #ffd700",
+                            "0 0 30px #ffd700, 0 0 60px #ffd700",
+                            "0 0 20px #ffd700, 0 0 40px #ffd700"
+                          ]
+                        }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        鲨鱼猛禽火箭发射器
+                      </motion.span>
+                    </>
+                  )}
                 </motion.h1>
 
                 <motion.p
@@ -167,7 +201,7 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  The Most Ferocious Memecoin in the Crypto Ocean
+                  {t.hero.subtitle}
                 </motion.p>
 
                 <motion.p
@@ -176,8 +210,7 @@ function App() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
-                  Combining the predatory instincts of sharks, the prehistoric power of raptors,
-                  and the explosive momentum of a rocket launch. Ready to dominate the memecoin universe.
+                  {t.hero.description}
                 </motion.p>
 
                 <motion.div
@@ -192,7 +225,7 @@ function App() {
                     whileHover={{ scale: 1.1, rotate: 2 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    Launch to the Moon 🚀
+                    {t.hero.launchButton}
                   </motion.a>
                   <motion.a
                     href="#about"
@@ -200,7 +233,7 @@ function App() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Learn More
+                    {t.hero.learnMore}
                   </motion.a>
                 </motion.div>
 
@@ -211,9 +244,9 @@ function App() {
                   animate="visible"
                 >
                   {[
-                    { label: "$SRRL", value: "Ticker" },
-                    { label: "1B", value: "Total Supply" },
-                    { label: "0%", value: "Tax" }
+                    { label: t.hero.stats.ticker.label, value: t.hero.stats.ticker.value },
+                    { label: t.hero.stats.supply.label, value: t.hero.stats.supply.value },
+                    { label: t.hero.stats.tax.label, value: t.hero.stats.tax.value }
                   ].map((stat, i) => (
                     <motion.div key={i} className="stat" variants={fadeInUp}>
                       <motion.h3
@@ -240,14 +273,10 @@ function App() {
             >
               <div className="container">
                 <motion.h2 className="section-title" variants={fadeInUp}>
-                  What is SRRL?
+                  {t.about.title}
                 </motion.h2>
                 <div className="about-grid">
-                  {[
-                    { icon: "🦈", title: "Shark Instinct", desc: "Like a great white in the ocean, SRRL hunts for opportunities in the crypto seas. We're apex predators in the memecoin ecosystem, always moving forward." },
-                    { icon: "🦖", title: "Raptor Cunning", desc: "Velociraptors were pack hunters with superior intelligence. Our community works together with strategy and coordination to dominate the market." },
-                    { icon: "🚀", title: "Rocket Power", desc: "Once we ignite, there's no stopping the ascent. SRRL is engineered for explosive growth and moon-bound trajectory. Strap in!" }
-                  ].map((item, i) => (
+                  {t.about.cards.map((item, i) => (
                     <motion.div
                       key={i}
                       className="about-card"
@@ -259,7 +288,7 @@ function App() {
                         animate={{ rotate: [0, 10, -10, 0] }}
                         transition={{ duration: 3, repeat: Infinity }}
                       >
-                        {item.icon}
+                        {["🦈", "🦖", "🚀"][i]}
                       </motion.div>
                       <h3>{item.title}</h3>
                       <p>{item.desc}</p>
@@ -280,7 +309,7 @@ function App() {
             >
               <div className="container">
                 <motion.h2 className="section-title" variants={fadeInUp}>
-                  Tokenomics
+                  {t.tokenomics.title}
                 </motion.h2>
                 <div className="tokenomics-grid">
                   <motion.div variants={fadeInUp}>
@@ -303,13 +332,10 @@ function App() {
                       }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
-                      <div className="phase-title">LAUNCHING PHASE 1 ON</div>
-                      <div className="phase-platform">FOUR.MEME</div>
+                      <div className="phase-title">{t.tokenomics.launchBanner.title}</div>
+                      <div className="phase-platform">{t.tokenomics.launchBanner.platform}</div>
                     </motion.div>
-                    {[
-                      { label: "meme.fun", value: "99%", color: "#ffd700" },
-                      { label: "Rockets", value: "1%", color: "#ff6b00" }
-                    ].map((item, i) => (
+                    {t.tokenomics.distribution.map((item, i) => (
                       <motion.div
                         key={i}
                         className="token-item"
@@ -318,7 +344,7 @@ function App() {
                         <div className="token-label">
                           <motion.span
                             className="color-badge"
-                            style={{ background: item.color }}
+                            style={{ background: ["#ffd700", "#ff6b00"][i] }}
                             animate={{ scale: [1, 1.2, 1] }}
                             transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
                           />
@@ -328,9 +354,9 @@ function App() {
                       </motion.div>
                     ))}
                     <motion.div className="token-info" variants={fadeInUp}>
-                      <p><strong>Total Supply:</strong> 1,000,000,000 $SRRL</p>
-                      <p><strong>Contract:</strong> <span className="contract-address gradient-text-green">0x...</span></p>
-                      <p><strong>Tax:</strong> 0% Buy / 0% Sell</p>
+                      <p><strong>{t.tokenomics.info.totalSupply}</strong> {t.tokenomics.info.totalSupplyValue}</p>
+                      <p><strong>{t.tokenomics.info.contract}</strong> <span className="contract-address gradient-text-green">0x...</span></p>
+                      <p><strong>{t.tokenomics.info.tax}</strong> {t.tokenomics.info.taxValue}</p>
                     </motion.div>
                   </motion.div>
                 </div>
@@ -347,17 +373,10 @@ function App() {
             >
               <div className="container">
                 <motion.h2 className="section-title" variants={fadeInUp}>
-                  Why SRRL?
+                  {t.features.title}
                 </motion.h2>
                 <div className="features-grid">
-                  {[
-                    { icon: "💎", title: "Community Driven", desc: "Built by the community, for the community. Every holder is part of the pack." },
-                    { icon: "🔒", title: "Liquidity Locked", desc: "LP tokens locked forever. Your investment is protected by the deep blue ocean." },
-                    { icon: "✅", title: "Contract Verified", desc: "Fully audited and transparent. No hidden functions, just pure memecoin power." },
-                    { icon: "🎯", title: "Marketing Blitz", desc: "Aggressive marketing strategy across all platforms. We're everywhere." },
-                    { icon: "🌊", title: "Fair Launch", desc: "No presale, no team allocation. Everyone starts at the same depth." },
-                    { icon: "⚡", title: "Lightning Fast", desc: "Built on modern blockchain infrastructure for speed and efficiency." }
-                  ].map((item, i) => (
+                  {t.features.items.map((item, i) => (
                     <motion.div
                       key={i}
                       className="feature-card"
@@ -369,7 +388,7 @@ function App() {
                         animate={{ y: [0, -10, 0] }}
                         transition={{ duration: 2, repeat: Infinity, delay: i * 0.1 }}
                       >
-                        {item.icon}
+                        {["💎", "🔒", "✅", "🎯", "🌊", "⚡"][i]}
                       </motion.div>
                       <h3>{item.title}</h3>
                       <p>{item.desc}</p>
@@ -390,22 +409,17 @@ function App() {
             >
               <div className="container">
                 <motion.h2 className="section-title" variants={fadeInUp}>
-                  Mission Roadmap
+                  {t.roadmap.title}
                 </motion.h2>
                 <div className="roadmap-timeline">
-                  {[
-                    { icon: "🦈", title: "Phase 1: The Swim", items: ["Token Launch", "Website & Social Media", "Community Building", "1,000+ Holders"] },
-                    { icon: "🦖", title: "Phase 2: The Hunt", items: ["CoinGecko Listing", "CoinMarketCap Listing", "Influencer Partnerships", "10,000+ Holders"] },
-                    { icon: "🚀", title: "Phase 3: The Launch", items: ["Major Exchange Listings", "Strategic Partnerships", "NFT Collection Drop", "100,000+ Holders"] },
-                    { icon: "🌙", title: "Phase 4: The Moon", items: ["Global Domination", "SRRL Ecosystem Expansion", "Charity Initiatives", "1,000,000+ Holders"] }
-                  ].map((phase, i) => (
+                  {t.roadmap.phases.map((phase, i) => (
                     <motion.div key={i} className="roadmap-item" variants={fadeInUp}>
                       <motion.div
                         className="roadmap-marker"
                         whileHover={{ scale: 1.2, rotate: 360 }}
                         transition={{ type: "spring" }}
                       >
-                        {phase.icon}
+                        {["🦈", "🦖", "🚀", "🌙"][i]}
                       </motion.div>
                       <motion.div className="roadmap-content" whileHover={{ x: 5 }}>
                         <h3>{phase.title}</h3>
@@ -439,10 +453,10 @@ function App() {
             >
               <div className="container">
                 <motion.h2 className="section-title" variants={fadeInUp}>
-                  Join the Pack
+                  {t.community.title}
                 </motion.h2>
                 <motion.p className="community-subtitle" variants={fadeInUp}>
-                  Be part of the most ferocious community in crypto
+                  {t.community.subtitle}
                 </motion.p>
                 <motion.div className="social-links" variants={staggerContainer}>
                   {[
@@ -478,15 +492,14 @@ function App() {
                 <div className="footer-content">
                   <div className="footer-brand">
                     <h3 className="gradient-text-blue">🦈🦖🚀 SRRL</h3>
-                    <p>Shark Raptor Rocket Launch</p>
+                    <p>{t.footer.brand}</p>
                   </div>
                   <div className="footer-disclaimer">
-                    <p><strong>Disclaimer:</strong> $SRRL is a memecoin created for entertainment purposes.
-                    Cryptocurrency investments are risky. Please do your own research and never invest more than you can afford to lose.</p>
+                    <p><strong>{t.footer.disclaimer}</strong> {t.footer.disclaimerText}</p>
                   </div>
                 </div>
                 <div className="footer-bottom">
-                  <p>&copy; 2024 SRRL. All rights reserved. Built by the community, for the community.</p>
+                  <p>{t.footer.copyright}</p>
                 </div>
               </div>
             </motion.footer>
