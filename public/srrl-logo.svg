@@ -1,0 +1,60 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sharkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="raptorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff0099;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="rocketGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00cc99;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer Circle -->
+  <circle cx="200" cy="200" r="180" fill="none" stroke="url(#sharkGradient)" stroke-width="3" opacity="0.3"/>
+  <circle cx="200" cy="200" r="165" fill="none" stroke="url(#raptorGradient)" stroke-width="2" opacity="0.2"/>
+
+  <!-- Central Design -->
+  <g filter="url(#glow)">
+    <!-- Shark Fin (top) -->
+    <path d="M 200 80 L 160 140 L 200 130 L 240 140 Z" fill="url(#sharkGradient)" opacity="0.9"/>
+    <path d="M 200 80 L 180 110 L 200 105 L 220 110 Z" fill="#ffffff" opacity="0.3"/>
+
+    <!-- Raptor Claw (middle left) -->
+    <path d="M 120 200 L 140 170 L 150 200 L 140 230 Z" fill="url(#raptorGradient)" opacity="0.9"/>
+    <path d="M 120 200 L 135 185 L 142 200 L 135 215 Z" fill="#ffffff" opacity="0.3"/>
+
+    <!-- Rocket (middle right) -->
+    <path d="M 280 200 L 260 170 L 250 200 L 260 230 Z" fill="url(#rocketGradient)" opacity="0.9"/>
+    <path d="M 280 200 L 265 185 L 258 200 L 265 215 Z" fill="#ffffff" opacity="0.3"/>
+
+    <!-- Center Circle with SRRL -->
+    <circle cx="200" cy="200" r="70" fill="rgba(10, 14, 39, 0.9)" stroke="url(#sharkGradient)" stroke-width="3"/>
+    <text x="200" y="190" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="url(#sharkGradient)" text-anchor="middle">SRRL</text>
+    <text x="200" y="220" font-family="Arial, sans-serif" font-size="12" fill="url(#rocketGradient)" text-anchor="middle" letter-spacing="2">LAUNCH</text>
+  </g>
+
+  <!-- Shark silhouette (bottom left) -->
+  <path d="M 80 280 Q 100 270, 120 280 L 115 285 Q 100 275, 80 285 Z" fill="url(#sharkGradient)" opacity="0.6"/>
+
+  <!-- Raptor claw mark (bottom middle) -->
+  <g opacity="0.5">
+    <line x1="180" y1="300" x2="185" y2="320" stroke="url(#raptorGradient)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="195" y1="298" x2="200" y2="322" stroke="url(#raptorGradient)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="210" y1="300" x2="215" y2="320" stroke="url(#raptorGradient)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Rocket trail (bottom right) -->
+  <path d="M 320 280 L 310 290 L 315 295 L 305 305 L 310 310 L 300 320" fill="none" stroke="url(#rocketGradient)" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
+</svg>

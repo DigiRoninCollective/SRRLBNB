@@ -1,0 +1,329 @@
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Main Background Container */
+.bg-image-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: hue-rotate(45deg) saturate(3) brightness(1.3) contrast(1.2);
+}
+
+/* Chromatic Aberration Layers */
+.bg-image-red {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  transform: translateX(3px);
+  filter: sepia(1) hue-rotate(40deg) saturate(3);
+}
+
+.bg-image-blue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  transform: translateX(-3px);
+  filter: sepia(1) hue-rotate(180deg) saturate(3);
+}
+
+/* Glitch Effect */
+.bg-image-container.glitch .bg-image-red {
+  transform: translateX(8px) translateY(2px);
+  animation: glitch-red 0.2s infinite;
+}
+
+.bg-image-container.glitch .bg-image-blue {
+  transform: translateX(-8px) translateY(-2px);
+  animation: glitch-blue 0.2s infinite;
+}
+
+@keyframes glitch-red {
+  0% { transform: translateX(8px) translateY(2px); }
+  25% { transform: translateX(-5px) translateY(-3px); }
+  50% { transform: translateX(10px) translateY(1px); }
+  75% { transform: translateX(-8px) translateY(4px); }
+  100% { transform: translateX(8px) translateY(-2px); }
+}
+
+@keyframes glitch-blue {
+  0% { transform: translateX(-8px) translateY(-2px); }
+  25% { transform: translateX(5px) translateY(3px); }
+  50% { transform: translateX(-10px) translateY(-1px); }
+  75% { transform: translateX(8px) translateY(-4px); }
+  100% { transform: translateX(-8px) translateY(2px); }
+}
+
+/* VHS Scanlines */
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 3px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* VHS Static Noise */
+.vhs-noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.4"/></svg>');
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 11;
+  mix-blend-mode: overlay;
+}
+
+/* Retro Grid Overlay */
+.retro-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 500px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.grid-lines {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background-image:
+    linear-gradient(0deg, transparent 24%, rgba(255, 215, 0, 0.12) 25%, rgba(255, 215, 0, 0.12) 26%, transparent 27%, transparent 74%, rgba(255, 215, 0, 0.12) 75%, rgba(255, 215, 0, 0.12) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(255, 183, 0, 0.12) 25%, rgba(255, 183, 0, 0.12) 26%, transparent 27%, transparent 74%, rgba(255, 183, 0, 0.12) 75%, rgba(255, 183, 0, 0.12) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  transform: rotateX(60deg);
+  transform-origin: bottom center;
+}
+
+/* Neon Glow Pulses */
+.neon-pulse {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.neon-pulse.top-left {
+  top: -150px;
+  left: -150px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+.neon-pulse.bottom-right {
+  bottom: -150px;
+  right: -150px;
+  background: radial-gradient(circle, rgba(255, 183, 0, 0.3) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+/* Spotlight Effect */
+.spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* VHS Tracking Lines */
+.tracking-lines {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 215, 0, 0.8) 25%,
+    rgba(255, 183, 0, 0.9) 50%,
+    rgba(255, 234, 0, 0.8) 75%,
+    transparent 100%
+  );
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  pointer-events: none;
+  z-index: 12;
+}
+
+/* Color Bars (VHS artifact) */
+.color-bars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  pointer-events: none;
+  z-index: 13;
+}
+
+.bar {
+  flex: 1;
+  opacity: 0.6;
+}
+
+.bar-1 {
+  background: linear-gradient(180deg, #ffd700 0%, transparent 100%);
+}
+
+.bar-2 {
+  background: linear-gradient(180deg, #ffb700 0%, transparent 100%);
+}
+
+.bar-3 {
+  background: linear-gradient(180deg, #ffea00 0%, transparent 100%);
+}
+
+.bar-4 {
+  background: linear-gradient(180deg, #ff6b00 0%, transparent 100%);
+}
+
+/* Film Grain */
+.film-grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" /></filter><rect width="100%" height="100%" filter="url(%23grain)" opacity="0.3"/></svg>');
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 9;
+  mix-blend-mode: multiply;
+  animation: grain-animation 0.3s infinite;
+}
+
+@keyframes grain-animation {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-1%, -1%); }
+  20% { transform: translate(1%, 1%); }
+  30% { transform: translate(-1%, 1%); }
+  40% { transform: translate(1%, -1%); }
+  50% { transform: translate(-1%, -1%); }
+  60% { transform: translate(1%, 1%); }
+  70% { transform: translate(-1%, 1%); }
+  80% { transform: translate(1%, -1%); }
+  90% { transform: translate(-1%, -1%); }
+}
+
+/* Vignette */
+.vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+  z-index: 8;
+}
+
+/* Retro Sun Rays */
+.sun-rays {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ray {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 215, 0, 0.2) 30%,
+    transparent 100%
+  );
+  transform-origin: top center;
+  filter: blur(1px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .neon-pulse {
+    width: 200px;
+    height: 200px;
+  }
+
+  .neon-pulse.top-left {
+    top: -100px;
+    left: -100px;
+  }
+
+  .neon-pulse.bottom-right {
+    bottom: -100px;
+    right: -100px;
+  }
+
+  .spotlight {
+    width: 300px;
+    height: 300px;
+  }
+
+  .grid-lines {
+    background-size: 30px 30px;
+  }
+}

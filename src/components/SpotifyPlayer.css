@@ -1,0 +1,476 @@
+.spotify-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 380px;
+  z-index: 999;
+  cursor: move;
+  filter: drop-shadow(0 10px 30px rgba(255, 215, 0, 0.4));
+}
+
+.spotify-player.minimized {
+  height: auto;
+}
+
+/* Walkman Body */
+.walkman-body {
+  background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%);
+  border: 4px solid #000;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow:
+    0 0 0 2px #ffd700,
+    inset 0 0 30px rgba(0, 0, 0, 0.8),
+    0 10px 40px rgba(0, 0, 0, 0.9);
+  position: relative;
+}
+
+.walkman-body::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(45deg, #ffd700, #ffb700, #ffd700, #ffb700);
+  border-radius: 20px;
+  z-index: -1;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    opacity: 0.6;
+    filter: blur(2px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(4px);
+  }
+}
+
+/* Top Section */
+.walkman-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ffd700;
+}
+
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #ffd700;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+  letter-spacing: 3px;
+  margin-bottom: 0.2rem;
+}
+
+.model-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  color: #ffb700;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.minimize-btn {
+  background: #ffd700;
+  border: 2px solid #000;
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow:
+    0 4px 0 #ffb700,
+    0 0 10px rgba(255, 215, 0, 0.5);
+  transition: all 0.2s;
+}
+
+.minimize-btn:active {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 #ffb700,
+    0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+/* Cassette Window */
+.cassette-window {
+  background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+  border: 3px solid #ffd700;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.9),
+    0 0 15px rgba(255, 215, 0, 0.3);
+  position: relative;
+}
+
+.cassette-window::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.1) 0%,
+    transparent 50%,
+    rgba(255, 215, 0, 0.05) 100%
+  );
+  border-radius: 9px;
+  pointer-events: none;
+}
+
+.cassette-interior {
+  position: relative;
+}
+
+/* Cassette Reels */
+.cassette-reels-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.cassette-reel {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #333 0%, #1a1a1a 50%, #0a0a0a 100%);
+  border: 3px solid #ffd700;
+  position: relative;
+  box-shadow:
+    inset 0 0 15px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.reel-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  height: 25px;
+  background: #0a0a0a;
+  border: 2px solid #ffb700;
+  border-radius: 50%;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.9);
+}
+
+.reel-spoke {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 45%;
+  background: linear-gradient(180deg, #ffd700 0%, #ffb700 100%);
+  transform-origin: bottom center;
+  box-shadow: 0 0 3px #ffd700;
+}
+
+/* Cassette Label */
+.cassette-label {
+  background: #ffd700;
+  padding: 0.6rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 2px solid #000;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.label-line {
+  height: 1px;
+  background: #000;
+  margin: 0.2rem 0;
+}
+
+.label-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0.3rem 0;
+}
+
+.label-subtext {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* LED Display */
+.led-display {
+  background: #000;
+  border: 3px solid #ffd700;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  box-shadow:
+    inset 0 0 15px rgba(255, 215, 0, 0.2),
+    0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.led-text {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  color: #ffd700;
+  text-shadow: 0 0 8px #ffd700;
+}
+
+.led-indicator {
+  font-size: 1rem;
+  color: #ffd700;
+  text-shadow: 0 0 10px #ffd700;
+}
+
+.track-info-text {
+  font-size: 0.55rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.track-counter {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  color: #ffb700;
+  text-shadow: 0 0 5px #ffb700;
+  text-align: center;
+  margin-top: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.led-level {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  color: #ffb700;
+  text-shadow: 0 0 5px #ffb700;
+}
+
+.led-bars {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+}
+
+.led-bar {
+  flex: 1;
+  height: 15px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.led-bar.active {
+  background: linear-gradient(180deg, #ffd700 0%, #ffb700 100%);
+  border-color: #ffd700;
+  box-shadow: 0 0 8px #ffd700;
+}
+
+/* Control Buttons */
+.walkman-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 2px solid #ffd700;
+}
+
+.control-button {
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  border: 3px solid #ffd700;
+  color: #ffd700;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow:
+    0 5px 0 #ffb700,
+    0 0 15px rgba(255, 215, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-button:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 1px 0 #ffb700,
+    0 0 8px rgba(255, 215, 0, 0.2);
+}
+
+.play-pause {
+  width: 65px;
+  height: 65px;
+  font-size: 1.8rem;
+  border-width: 4px;
+  box-shadow:
+    0 6px 0 #ffb700,
+    0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.play-pause:active {
+  transform: translateY(5px);
+  box-shadow:
+    0 1px 0 #ffb700,
+    0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.control-button span {
+  text-shadow: 0 0 8px #ffd700;
+  filter: drop-shadow(0 0 5px #ffd700);
+}
+
+/* Volume Section */
+.volume-section {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.volume-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  color: #ffd700;
+  text-shadow: 0 0 8px #ffd700;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.volume-control {
+  position: relative;
+}
+
+.volume-slider {
+  width: 100%;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(90deg, #ffd700 0%, #ffb700 100%);
+  border-radius: 4px;
+  outline: none;
+  border: 2px solid #000;
+  box-shadow:
+    inset 0 0 8px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #ffd700, #ffb700);
+  cursor: pointer;
+  border: 3px solid #000;
+  box-shadow:
+    0 4px 0 #ff6b00,
+    0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.volume-slider::-webkit-slider-thumb:active {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 #ff6b00,
+    0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #ffd700, #ffb700);
+  cursor: pointer;
+  border: 3px solid #000;
+  box-shadow:
+    0 4px 0 #ff6b00,
+    0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.volume-markers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding: 0 2px;
+}
+
+.volume-marker {
+  font-family: 'Courier New', monospace;
+  font-size: 0.65rem;
+  color: #ffb700;
+  font-weight: bold;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .spotify-player {
+    width: 320px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .cassette-reel {
+    width: 55px;
+    height: 55px;
+  }
+
+  .reel-center {
+    width: 20px;
+    height: 20px;
+  }
+
+  .control-button {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .play-pause {
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+  }
+
+  .model-text {
+    font-size: 0.6rem;
+  }
+}
