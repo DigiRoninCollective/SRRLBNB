@@ -7,9 +7,9 @@ import AnimatedBackground from './components/AnimatedBackground';
 import './App.css';
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [showContent, setShowContent] = useState(false);
+  const [showContent, setShowContent] = useState(true);
 
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -100,6 +100,9 @@ function App() {
 
             {/* Hero Section */}
             <section className="hero">
+              <video className="hero-video" autoPlay muted loop playsInline>
+                <source src="/hero-video.mp4" type="video/mp4" />
+              </video>
               <div className="hero-overlay" />
 
               <motion.div
