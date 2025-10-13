@@ -80,6 +80,14 @@ function App() {
                   whileHover={{ scale: 1.05 }}
                 >
                   🦈🦖🚀 SRRL.FUN
+                  <span style={{
+                    fontSize: '0.6rem',
+                    marginLeft: '0.5rem',
+                    color: '#ffd700',
+                    textShadow: '0 0 10px #ffd700'
+                  }}>
+                    鲨鱼猛禽火箭发射器
+                  </span>
                 </motion.div>
                 <div className="nav-links">
                   <a href="#about">About</a>
@@ -128,7 +136,28 @@ function App() {
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    ROCKET LAUNCH
+                    ROCKET LAUNCHER
+                  </motion.span>
+                  <br />
+                  <motion.span
+                    className="chinese-text"
+                    style={{
+                      fontSize: '2rem',
+                      color: '#ffd700',
+                      textShadow: '0 0 20px #ffd700, 0 0 40px #ffd700',
+                      fontWeight: 'bold',
+                      letterSpacing: '0.3rem'
+                    }}
+                    animate={{
+                      textShadow: [
+                        "0 0 20px #ffd700, 0 0 40px #ffd700",
+                        "0 0 30px #ffd700, 0 0 60px #ffd700",
+                        "0 0 20px #ffd700, 0 0 40px #ffd700"
+                      ]
+                    }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    鲨鱼猛禽火箭发射器
                   </motion.span>
                 </motion.h1>
 
