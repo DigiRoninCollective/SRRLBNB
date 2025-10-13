@@ -11,10 +11,12 @@ const SpotifyPlayer = () => {
 
   // Add your MP3 files to /public/music/ folder and list them here
   const tracks = [
-    { title: 'Track 1', artist: 'SRRL', file: '/music/track1.mp3' },
-    { title: 'Track 2', artist: 'SRRL', file: '/music/track2.mp3' },
-    { title: 'Track 3', artist: 'SRRL', file: '/music/track3.mp3' },
-    // Add more tracks here
+    { title: 'Shark Raptor Rocket Launcher', artist: 'SRRL', file: '/music/Shark Raptor Rocket Launcher (Full Song).mp3' },
+    { title: 'BABY, RIDE MY SHARK TONIGHT', artist: 'Raptor Crew', file: '/music/BABY, RIDE MY SHARK TONIGHT — Raptor Crew [TyYI8A-C1FE].mp3' },
+    { title: 'BLOW SHIT UP', artist: 'Raptor Crew', file: '/music/BLOW SHIT UP  Raptor Crew.mp3' },
+    { title: 'JURASSIC PARK AINT GOT SHIT ON US', artist: 'Raptor Crew', file: '/music/JURASSIC PARK AINT GOT SHIT ON US  Raptor Crew.mp3' },
+    { title: "WE'RE THE LAST PRE-HISTORIC GANGSTERS", artist: 'Raptor Crew', file: '/music/WERE_THE_LAST_OF_THE_PRE_HISTORIC_MOTHERFUCKING_GANGSTERS_Raptor.mp3' },
+    { title: "YOU AIN'T NEVER SEEN A RAPTOR ON A SHARK", artist: 'Raptor Crew', file: '/music/YOU AINT NEVER SEEN A RAPTOR ON A SHARK BEFORE  Raptor Crew.mp3' }
   ];
 
   // Update audio volume when volume slider changes
