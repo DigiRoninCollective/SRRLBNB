@@ -309,12 +309,12 @@ function App() {
                     { label: t.hero.stats.tax.label, value: t.hero.stats.tax.value }
                   ].map((stat, i) => (
                     <motion.div key={i} className="stat" variants={fadeInUp}>
-                      <motion.h3
-                        className="gradient-text-green"
+                      <motion.div
+                        className="stat-label gradient-text-green"
                         whileHover={{ scale: 1.1 }}
                       >
                         {stat.label}
-                      </motion.h3>
+                      </motion.div>
                       <p>{stat.value}</p>
                     </motion.div>
                   ))}
