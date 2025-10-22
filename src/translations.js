@@ -45,7 +45,7 @@ export const translations = {
         platform: "FOUR.MEME"
       },
       distribution: [
-        { label: "meme.fun", value: "99%" },
+        { label: "four.meme", value: "99%" },
         { label: "Rockets", value: "1%" }
       ],
       info: {
@@ -145,7 +145,7 @@ export const translations = {
         platform: "FOUR.MEME"
       },
       distribution: [
-        { label: "meme.fun", value: "99%" },
+        { label: "four.meme", value: "99%" },
         { label: "火箭", value: "1%" }
       ],
       info: {
