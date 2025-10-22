@@ -68,10 +68,10 @@ body::before {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
   backdrop-filter: blur(10px);
   z-index: 10001;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   border-bottom: 3px solid var(--neon-gold);
   box-shadow: 0 0 20px rgba(255,215,0,0.5);
 }
@@ -152,7 +152,7 @@ body::before {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 80px;
+  padding-top: 60px;
   background: transparent;
 }
 
