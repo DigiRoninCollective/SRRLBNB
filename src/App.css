@@ -789,13 +789,13 @@ section[id] {
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    padding-top: 100px;
+    padding-top: 10vh;
     min-height: auto;
     padding-bottom: 3rem;
   }
 
   section[id] {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 10vh;
   }
 
   .hero-title {
@@ -851,13 +851,13 @@ section[id] {
 /* Small phones (480px and below) */
 @media (max-width: 480px) {
   .hero {
-    padding-top: 80px;
+    padding-top: 10vh;
     padding-bottom: 2rem;
     min-height: auto;
   }
 
   section[id] {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 10vh;
   }
 
   .hero-title {
@@ -899,12 +899,12 @@ section[id] {
 /* Ultra-small phones (375px and below) */
 @media (max-width: 375px) {
   .hero {
-    padding-top: 70px;
+    padding-top: 10vh;
     padding-bottom: 1.5rem;
   }
 
   section[id] {
-    scroll-margin-top: 70px;
+    scroll-margin-top: 10vh;
   }
 
   .hero-title {
