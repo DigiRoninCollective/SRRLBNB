@@ -13,8 +13,6 @@ function App() {
   const [showContent, setShowContent] = useState(true);
   const [language, setLanguage] = useState('en');
 
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   // Prevent auto-scroll to anchor on initial load
   useEffect(() => {
@@ -176,7 +174,6 @@ function App() {
 
               <motion.div
                 className="container hero-content"
-                style={{ opacity }}
               >
                 <motion.h1
                   className="hero-title"
