@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap');
 
 :root {
-  --neon-gold: #ffd700;
-  --neon-amber: #ffb700;
-  --neon-blue: #00f5ff;
-  --neon-yellow: #ffea00;
-  --neon-purple: #c724ff;
-  --neon-orange: #ff6b00;
+  --neon-gold: #d4af37;
+  --neon-amber: #cc9933;
+  --neon-blue: #00d9ff;
+  --neon-yellow: #e6c200;
+  --neon-purple: #b833ff;
+  --neon-orange: #ff5500;
   --dark-bg: #0a0a0a;
   --darker-bg: #000000;
   --grid-color: rgba(255, 215, 0, 0.08);
@@ -169,7 +169,7 @@ body::before {
 }
 
 .hero-container {
-  background: #000000 !important;
+  background: rgba(0, 0, 0, 0.6) !important;
   padding: 3rem;
   border-radius: 20px;
   border: 3px solid var(--neon-gold);
@@ -314,7 +314,7 @@ body::before {
   text-transform: uppercase;
   letter-spacing: 3px;
   padding: 1.5rem;
-  background: #000000 !important;
+  background: rgba(0, 0, 0, 0.7) !important;
   border-radius: 12px;
 }
 
@@ -327,13 +327,14 @@ body::before {
 }
 
 .hero-description {
-  font-size: 1.1rem;
-  color: #ccc;
+  font-size: 1.4rem;
+  color: #e0e0e0;
   margin: 0;
   letter-spacing: 1px;
   padding: 2rem;
-  background: #000000 !important;
+  background: rgba(0, 0, 0, 0.7) !important;
   border-radius: 12px;
+  line-height: 1.8;
 }
 
 .hero-buttons {
@@ -342,7 +343,7 @@ body::before {
   justify-content: center;
   margin-bottom: 3rem;
   padding: 2rem;
-  background: #000000 !important;
+  background: rgba(0, 0, 0, 0.7) !important;
   border-radius: 12px;
 }
 
@@ -352,14 +353,14 @@ body::before {
   gap: 4rem;
   margin-top: 2rem;
   padding: 2rem;
-  background: #000000 !important;
+  background: rgba(0, 0, 0, 0.7) !important;
   border-radius: 12px;
 }
 
 .stat {
   text-align: center;
   padding: 2rem 2.5rem;
-  background: #000000 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
   border: 3px solid var(--neon-gold);
   border-radius: 12px;
   box-shadow: 0 0 40px rgba(255,215,0,0.6), inset 0 0 20px rgba(255,215,0,0.15);
