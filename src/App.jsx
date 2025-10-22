@@ -308,7 +308,7 @@ function App() {
                   ].map((stat, i) => (
                     <motion.div key={i} className="stat" variants={fadeInUp}>
                       <motion.span
-                        className="stat-label gradient-text-green"
+                        className="stat-label"
                         whileHover={{ scale: 1.1 }}
                       >
                         {stat.label}
@@ -554,7 +554,7 @@ function App() {
               <div className="container">
                 <div className="footer-content">
                   <div className="footer-brand">
-                    <h3 className="gradient-text-blue">🦈🦖🚀 SRRL</h3>
+                    <div className="footer-brand-title gradient-text-blue">🦈🦖🚀 SRRL</div>
                     <p>{t.footer.brand}</p>
                   </div>
                   <div className="footer-disclaimer">
