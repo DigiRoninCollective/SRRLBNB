@@ -237,15 +237,17 @@ const SpotifyPlayer = () => {
 
             {/* Volume Slider */}
             <div className="volume-section">
-              <div className="volume-label">VOLUME</div>
+              <label htmlFor="spotify-volume" className="volume-label">VOLUME</label>
               <div className="volume-control">
                 <input
+                  id="spotify-volume"
                   type="range"
                   min="0"
                   max="100"
                   value={volume}
                   onChange={(e) => setVolume(e.target.value)}
                   className="volume-slider"
+                  aria-label="Volume control"
                 />
                 <div className="volume-markers">
                   {[0, 25, 50, 75, 100].map((mark) => (

@@ -141,16 +141,19 @@ const MusicPlayer = () => {
 
           {/* Volume Control */}
           <div className="volume-control">
-            <span className="volume-icon">🔊</span>
+            <label htmlFor="music-volume" className="sr-only">Volume</label>
+            <span className="volume-icon" aria-hidden="true">🔊</span>
             <input
+              id="music-volume"
               type="range"
               min="0"
               max="100"
               value={volume}
               onChange={(e) => setVolume(e.target.value)}
               className="volume-slider"
+              aria-label="Volume control"
             />
-            <span className="volume-value">{volume}%</span>
+            <span className="volume-value" aria-live="polite">{volume}%</span>
           </div>
 
           {/* VU Meters */}
