@@ -205,29 +205,17 @@ body::before {
 /* BSC Contract Address Box */
 .contract-address-box {
   margin: 2.5rem auto;
-  padding: 2rem 2.5rem;
-  border: 3px solid var(--neon-gold);
-  border-radius: 15px;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 10, 40, 0.95) 100%);
-  backdrop-filter: blur(25px);
-  max-width: 700px;
+  padding: 2.5rem 3rem;
+  border: 4px solid var(--neon-gold);
+  border-radius: 20px;
+  background: #000000;
+  max-width: 750px;
   box-shadow:
-    0 0 60px rgba(255, 215, 0, 0.8),
-    inset 0 0 40px rgba(255, 215, 0, 0.15),
-    0 10px 40px rgba(0, 0, 0, 0.9);
+    0 0 80px rgba(255, 215, 0, 1),
+    0 0 40px rgba(255, 215, 0, 0.8),
+    inset 0 0 50px rgba(255, 215, 0, 0.25);
   position: relative;
   overflow: hidden;
-}
-
-.contract-address-box::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-  animation: shimmerEffect 3s infinite;
 }
 
 @keyframes shimmerEffect {
@@ -236,27 +224,28 @@ body::before {
 }
 
 .contract-label {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--neon-gold);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-  text-shadow: 0 0 10px var(--neon-gold), 0 0 20px rgba(255, 215, 0, 0.5);
+  letter-spacing: 3px;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px var(--neon-gold), 0 0 30px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 215, 0, 0.5);
   position: relative;
   z-index: 1;
 }
 
 .contract-address {
   font-family: 'Courier New', monospace;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #00f5ff;
   word-break: break-all;
-  line-height: 1.6;
-  text-shadow: 0 0 10px rgba(0, 245, 255, 0.5), 0 0 20px rgba(0, 245, 255, 0.3);
+  line-height: 1.8;
+  text-shadow: 0 0 15px rgba(0, 245, 255, 0.8), 0 0 30px rgba(0, 245, 255, 0.6), 0 0 50px rgba(0, 245, 255, 0.4);
   letter-spacing: 0.5px;
   position: relative;
   z-index: 1;
+  font-weight: 600;
 }
 
 .hero-title {
