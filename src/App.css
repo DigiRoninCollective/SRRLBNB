@@ -45,6 +45,7 @@ body {
   color: var(--text-light);
   line-height: 1.6;
   overflow-x: hidden;
+  overflow-y: scroll;
   background-image: url('/srrlog.png');
   background-size: cover;
   background-position: center;
