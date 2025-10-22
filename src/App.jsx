@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import IntroAnimation from './components/IntroAnimation';
 import WelcomePopup from './components/WelcomePopup';
 import SpotifyPlayer from './components/SpotifyPlayer';
-import AnimatedBackground from './components/AnimatedBackground';
 import MobileMenu from './components/MobileMenu';
 import { translations } from './translations';
 import './App.css';
