@@ -197,7 +197,7 @@ body::before {
 
 /* OG Logo - Base Styles */
 .hero-og-logo {
-  max-width: 300px;
+  max-width: 500px;
   width: 100%;
   height: auto;
   margin: 2rem auto 0;
@@ -873,7 +873,7 @@ section[id] {
   }
 
   .hero-og-logo {
-    max-width: 200px !important;
+    max-width: 350px !important;
     margin: 1.5rem auto !important;
     filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3)) !important;
   }
@@ -920,7 +920,7 @@ section[id] {
   }
 
   .hero-og-logo {
-    max-width: 160px !important;
+    max-width: 250px !important;
     margin: 1rem auto !important;
     filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.25)) !important;
   }

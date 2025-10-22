@@ -20,7 +20,10 @@ function App() {
   // Prevent auto-scroll to anchor on initial load
   useEffect(() => {
     window.history.scrollRestoration = 'manual';
-    window.scrollTo(0, 0);
+    // Only scroll to top if there's no hash in URL
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   const handleIntroComplete = () => {
@@ -220,7 +223,7 @@ function App() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.2, duration: 0.6 }}
                   style={{
-                    maxWidth: 'min(100vw - 2rem, 300px)',
+                    maxWidth: 'min(100vw - 2rem, 500px)',
                     width: '100%',
                     height: 'auto',
                     margin: '2rem auto 0',
