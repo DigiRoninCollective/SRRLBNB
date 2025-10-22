@@ -146,7 +146,14 @@ function App() {
 
             {/* Hero Section */}
             <section className="hero">
-              <video className="hero-video" autoPlay muted loop playsInline>
+              <video
+                className="hero-video"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="none"
+              >
                 <source src="/hero-video.mp4" type="video/mp4" />
               </video>
               <div className="hero-overlay" />
@@ -208,6 +215,7 @@ function App() {
                   src="/srrlog.png"
                   alt="SRRL OG Logo"
                   className="hero-og-logo"
+                  loading="lazy"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.2, duration: 0.6 }}

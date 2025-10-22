@@ -43,6 +43,7 @@ const IntroAnimation = ({ onComplete }) => {
         autoPlay
         muted
         playsInline
+        preload="auto"
         style={{
           transform: `scale(${videoZoom})`,
         }}
@@ -70,6 +71,7 @@ const IntroAnimation = ({ onComplete }) => {
           src="/srrl-logo.svg"
           alt="SRRL"
           className="srrl-logo"
+          loading="eager"
           animate={{
             opacity: [0.15, 0.25, 0.15], // Pulse effect
             scale: [1, 1.05, 1],
