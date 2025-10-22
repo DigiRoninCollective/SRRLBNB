@@ -144,7 +144,7 @@ body::before {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 100px;
+  padding-top: 150px;
   background: linear-gradient(180deg, #000 0%, #1a0033 50%, #330033 100%);
 }
 
@@ -762,6 +762,11 @@ body::before {
   font-family: 'Press Start 2P', cursive;
   text-transform: uppercase;
   letter-spacing: 3px;
+}
+
+/* Scroll margin for fixed navbar */
+section[id] {
+  scroll-margin-top: 150px;
 }
 
 /* Responsive */

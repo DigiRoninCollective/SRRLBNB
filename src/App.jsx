@@ -16,6 +16,12 @@ function App() {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
+  // Prevent auto-scroll to anchor on initial load
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleIntroComplete = () => {
     setShowIntro(false);
     setShowPopup(true);
