@@ -159,6 +159,7 @@ function App() {
               </div>
             </motion.nav>
 
+            <main>
             {/* Hero Section */}
             <section className="hero">
               <video
@@ -544,6 +545,7 @@ function App() {
                 </motion.div>
               </div>
             </motion.section>
+            </main>
 
             {/* Footer */}
             <motion.footer
