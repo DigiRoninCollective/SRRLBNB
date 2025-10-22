@@ -21,6 +21,11 @@ function App() {
     // Disable browser scroll restoration immediately
     window.history.scrollRestoration = 'manual';
 
+    // Remove hash from URL if it exists
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+
     // Scroll to top on mount
     window.scrollTo(0, 0);
 
