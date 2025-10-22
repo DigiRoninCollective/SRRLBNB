@@ -152,8 +152,9 @@ body::before {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 60px;
+  padding-top: 120px;
   background: transparent;
+  margin-top: 0;
 }
 
 /* Hero overlay removed - using background image instead */
