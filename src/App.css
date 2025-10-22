@@ -778,6 +778,16 @@ section[id] {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+    min-height: auto;
+    padding-bottom: 3rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 100px;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
@@ -825,5 +835,90 @@ section[id] {
     width: 60px;
     height: 60px;
     font-size: 2rem;
+  }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 2rem;
+    min-height: auto;
+  }
+
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-og-logo {
+    max-width: 200px !important;
+    margin: 1.5rem 0 !important;
+  }
+
+  .hero-buttons {
+    gap: 1rem;
+  }
+
+  .btn-large {
+    font-size: 0.5rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-stats {
+    gap: 1rem;
+  }
+}
+
+/* Ultra-small phones (375px and below) */
+@media (max-width: 375px) {
+  .hero {
+    padding-top: 70px;
+    padding-bottom: 1.5rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 70px;
+  }
+
+  .hero-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-og-logo {
+    max-width: 160px !important;
+    margin: 1rem 0 !important;
+  }
+
+  .btn-large {
+    font-size: 0.45rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
   }
 }
