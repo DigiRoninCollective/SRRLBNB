@@ -446,3 +446,53 @@
   40% { transform: translate(0.5%, -0.5%); }
   50% { transform: translate(-0.5%, -0.5%); }
 }
+
+/* Accessibility - Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable main background animations */
+  .bg-image-container {
+    animation: none !important;
+  }
+
+  /* Disable chromatic aberration glitch animations */
+  .bg-image-container.glitch .bg-image-red,
+  .bg-image-container.glitch .bg-image-blue {
+    animation: none !important;
+  }
+
+  /* Disable VHS noise animation */
+  .vhs-noise {
+    animation: none !important;
+  }
+
+  /* Disable grid animation */
+  .grid-lines {
+    animation: none !important;
+  }
+
+  /* Disable neon pulse animations */
+  .neon-pulse {
+    animation: none !important;
+    opacity: 0.15 !important;
+  }
+
+  /* Disable spotlight animation */
+  .spotlight {
+    animation: none !important;
+  }
+
+  /* Disable tracking lines animation */
+  .tracking-lines {
+    animation: none !important;
+  }
+
+  /* Disable film grain animation */
+  .film-grain {
+    animation: none !important;
+  }
+
+  /* Disable sun rays animation */
+  .ray {
+    animation: none !important;
+  }
+}

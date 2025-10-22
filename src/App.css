@@ -935,3 +935,113 @@ section[id] {
     margin-bottom: 1.5rem;
   }
 }
+
+/* Accessibility - Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable all animated elements */
+  .hero-title {
+    animation: none !important;
+  }
+
+  /* Keep visual effects but remove animations */
+  .nav-links a::after {
+    width: 0 !important;
+  }
+
+  .nav-links a:hover::after {
+    animation: none !important;
+  }
+
+  /* Disable video background parallax effect */
+  .hero-video {
+    animation: none !important;
+  }
+
+  /* Disable glitch animations */
+  .bg-image-container {
+    animation: none !important;
+  }
+
+  .bg-image-container.glitch .bg-image-red,
+  .bg-image-container.glitch .bg-image-blue {
+    animation: none !important;
+  }
+
+  /* Keep film grain static */
+  .film-grain {
+    animation: none !important;
+  }
+
+  /* Remove neon pulse animations */
+  .neon-pulse {
+    animation: none !important;
+    opacity: 0.3 !important;
+  }
+
+  /* Remove spotlight animations */
+  .spotlight {
+    animation: none !important;
+  }
+
+  /* Remove grid scroll animations */
+  .grid-lines {
+    animation: none !important;
+  }
+
+  /* Remove tracking line animations */
+  .tracking-lines {
+    animation: none !important;
+  }
+
+  /* Remove sun ray animations */
+  .ray {
+    animation: none !important;
+  }
+
+  /* Remove button transitions */
+  .control-button,
+  .play-pause,
+  .minimize-btn,
+  .hamburger,
+  .close-btn,
+  .mobile-language-toggle,
+  .mobile-buy-btn {
+    transition: none !important;
+  }
+
+  .control-button:active,
+  .play-pause:active,
+  .minimize-btn:active,
+  .hamburger:hover,
+  .close-btn:active,
+  .mobile-language-toggle:hover,
+  .mobile-buy-btn:hover {
+    transform: none !important;
+  }
+
+  /* Keep menu animations but reduce duration */
+  .mobile-menu-panel {
+    animation-duration: 0.01ms !important;
+  }
+
+  /* Disable VHS effects */
+  .vhs-noise {
+    animation: none !important;
+  }
+
+  /* Volume slider - no transitions */
+  .volume-slider,
+  .volume-slider::-webkit-slider-thumb,
+  .volume-slider::-moz-range-thumb {
+    transition: none !important;
+  }
+}

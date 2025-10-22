@@ -715,3 +715,71 @@
     font-size: 1rem;
   }
 }
+
+/* Accessibility - Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable player animations */
+  .spotify-player {
+    animation: none !important;
+  }
+
+  /* Cassette reels rotation */
+  .cassette-reel {
+    animation: none !important;
+  }
+
+  /* LED indicator blinking */
+  .led-indicator {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  /* LED bar pulsing */
+  .led-bar {
+    animation: none !important;
+  }
+
+  /* Control button interactions */
+  .control-button,
+  .play-pause,
+  .minimize-btn {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .control-button:hover,
+  .play-pause:hover,
+  .minimize-btn:hover {
+    transform: none !important;
+    scale: 1 !important;
+  }
+
+  .control-button:active,
+  .play-pause:active,
+  .minimize-btn:active {
+    transform: none !important;
+  }
+
+  /* Volume slider animations */
+  .volume-slider {
+    transition: none !important;
+  }
+
+  .volume-slider::-webkit-slider-thumb {
+    transition: none !important;
+  }
+
+  .volume-slider::-moz-range-thumb {
+    transition: none !important;
+  }
+
+  /* Border glow animation */
+  .walkman-body::before {
+    animation: none !important;
+  }
+
+  /* Cassette window shine effect */
+  .cassette-window::before {
+    animation: none !important;
+  }
+}
