@@ -4,6 +4,8 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "vite",
+  "buildCommandTimeout": 120,
+  "installCommandTimeout": 300,
   "rewrites": [
     {
       "source": "/(.*)",
