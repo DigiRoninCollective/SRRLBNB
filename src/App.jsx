@@ -173,9 +173,12 @@ function App() {
               <div className="hero-overlay" />
 
               <motion.div
-                className="container hero-content"
+                className="hero-container"
               >
-                <motion.h1
+                <motion.div
+                  className="container hero-content"
+                >
+                  <motion.h1
                   className="hero-title"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -316,6 +319,7 @@ function App() {
                       <p>{stat.value}</p>
                     </motion.div>
                   ))}
+                </motion.div>
                 </motion.div>
               </motion.div>
             </section>

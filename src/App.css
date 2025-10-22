@@ -171,6 +171,18 @@ body::before {
   scroll-margin-top: 20vh;
 }
 
+.hero-container {
+  background: rgba(0, 0, 0, 0.88);
+  padding: 3rem;
+  border-radius: 20px;
+  border: 3px solid var(--neon-gold);
+  box-shadow: 0 0 80px rgba(255, 215, 0, 1), 0 0 40px rgba(255, 215, 0, 0.8);
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  width: 90%;
+}
+
 /* Hero overlay removed - using background image instead */
 
 .hero-video {
