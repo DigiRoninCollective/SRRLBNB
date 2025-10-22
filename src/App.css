@@ -152,10 +152,10 @@ body::before {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 10vh;
+  padding-top: 20vh;
   margin-top: 0;
   background: transparent;
-  scroll-margin-top: 10vh;
+  scroll-margin-top: 20vh;
 }
 
 /* Hero overlay removed - using background image instead */
@@ -188,6 +188,10 @@ body::before {
   text-align: center;
   z-index: 2;
   max-width: 900px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 3rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
 }
 
 /* OG Logo - Base Styles */
@@ -789,13 +793,17 @@ section[id] {
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    padding-top: 10vh;
+    padding-top: 20vh;
     min-height: auto;
     padding-bottom: 3rem;
   }
 
   section[id] {
-    scroll-margin-top: 10vh;
+    scroll-margin-top: 20vh;
+  }
+
+  .hero-content {
+    padding: 2rem;
   }
 
   .hero-title {
@@ -851,13 +859,17 @@ section[id] {
 /* Small phones (480px and below) */
 @media (max-width: 480px) {
   .hero {
-    padding-top: 10vh;
+    padding-top: 20vh;
     padding-bottom: 2rem;
     min-height: auto;
   }
 
   section[id] {
-    scroll-margin-top: 10vh;
+    scroll-margin-top: 20vh;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
   }
 
   .hero-title {
@@ -899,12 +911,16 @@ section[id] {
 /* Ultra-small phones (375px and below) */
 @media (max-width: 375px) {
   .hero {
-    padding-top: 10vh;
+    padding-top: 20vh;
     padding-bottom: 1.5rem;
   }
 
   section[id] {
-    scroll-margin-top: 10vh;
+    scroll-margin-top: 20vh;
+  }
+
+  .hero-content {
+    padding: 1rem;
   }
 
   .hero-title {
