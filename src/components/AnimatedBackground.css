@@ -303,9 +303,12 @@
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+  /* Reduce blur effects for performance */
   .neon-pulse {
     width: 200px;
     height: 200px;
+    opacity: 0.5; /* Reduce opacity of pulsing glows */
+    filter: blur(20px); /* Reduced from 40px */
   }
 
   .neon-pulse.top-left {
@@ -318,12 +321,128 @@
     right: -100px;
   }
 
+  /* Reduce spotlight blur */
   .spotlight {
     width: 300px;
     height: 300px;
+    filter: blur(30px); /* Reduced from 50px */
+    opacity: 0.08; /* Reduce opacity */
   }
 
   .grid-lines {
     background-size: 30px 30px;
+    animation: grid-scroll-slow 10s linear infinite;
   }
+
+  /* Reduce scanlines opacity */
+  .scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      transparent 1px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 3px
+    );
+  }
+
+  /* Reduce VHS noise */
+  .vhs-noise {
+    opacity: 0.02; /* Reduced from 0.05 */
+  }
+
+  /* Disable tracking lines animation on mobile */
+  .tracking-lines {
+    animation: tracking-slow 12s linear infinite;
+    opacity: 0.6; /* Slightly reduce opacity */
+  }
+
+  /* Reduce film grain animation intensity */
+  .film-grain {
+    opacity: 0.04; /* Reduced from 0.08 */
+    animation: grain-animation-slow 0.5s infinite;
+  }
+
+  /* Reduce sun rays opacity */
+  .ray {
+    opacity: 0.7; /* Reduce visibility of rays */
+  }
+
+  /* Disable chromatic aberration on small mobile */
+  .bg-image-red,
+  .bg-image-blue {
+    opacity: 0.1; /* Further reduced from 0.2 */
+  }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+  /* Further reduce blur and effects for very small devices */
+  .neon-pulse {
+    width: 150px;
+    height: 150px;
+    opacity: 0.3;
+    filter: blur(15px);
+  }
+
+  .neon-pulse.top-left {
+    top: -75px;
+    left: -75px;
+  }
+
+  .neon-pulse.bottom-right {
+    bottom: -75px;
+    right: -75px;
+  }
+
+  .spotlight {
+    width: 250px;
+    height: 250px;
+    filter: blur(20px);
+    opacity: 0.05;
+  }
+
+  .grid-lines {
+    background-size: 25px 25px;
+  }
+
+  .vhs-noise {
+    opacity: 0.01;
+  }
+
+  .tracking-lines {
+    height: 2px;
+    opacity: 0.4;
+  }
+
+  .film-grain {
+    opacity: 0.02;
+  }
+
+  .ray {
+    opacity: 0.5;
+  }
+
+  .bg-image-red,
+  .bg-image-blue {
+    opacity: 0.05;
+  }
+}
+
+@keyframes grid-scroll-slow {
+  0% { transform: rotateX(60deg) translateY(0); }
+  100% { transform: rotateX(60deg) translateY(100%); }
+}
+
+@keyframes tracking-slow {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes grain-animation-slow {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-0.5%, -0.5%); }
+  20% { transform: translate(0.5%, 0.5%); }
+  30% { transform: translate(-0.5%, 0.5%); }
+  40% { transform: translate(0.5%, -0.5%); }
+  50% { transform: translate(-0.5%, -0.5%); }
 }

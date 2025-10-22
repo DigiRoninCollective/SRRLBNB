@@ -4,18 +4,29 @@ import './AnimatedBackground.css';
 
 const AnimatedBackground = ({ imageSrc }) => {
   const [glitchActive, setGlitchActive] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    // Random VHS glitch effect
+    // Detect mobile breakpoint
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+
+    // Random VHS glitch effect - reduced frequency on mobile
     const glitchInterval = setInterval(() => {
-      if (Math.random() > 0.7) {
+      const threshold = isMobile ? 0.85 : 0.7; // Less frequent on mobile
+      if (Math.random() > threshold) {
         setGlitchActive(true);
         setTimeout(() => setGlitchActive(false), 200);
       }
-    }, 3000);
+    }, isMobile ? 5000 : 3000); // Longer intervals on mobile
 
-    return () => clearInterval(glitchInterval);
-  }, []);
+    return () => {
+      clearInterval(glitchInterval);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobile]);
 
   return (
     <div className="animated-background">
@@ -28,7 +39,7 @@ const AnimatedBackground = ({ imageSrc }) => {
           y: [0, -20, 0]
         }}
         transition={{
-          duration: 15,
+          duration: isMobile ? 25 : 15, // Slower animation on mobile for performance
           repeat: Infinity,
           ease: "easeInOut"
         }}
