@@ -169,7 +169,7 @@ body::before {
 }
 
 .hero-container {
-  background: rgba(0, 0, 0, 0.6) !important;
+  background: rgba(0, 0, 0, 0.85) !important;
   padding: 3rem;
   border-radius: 20px;
   border: 3px solid var(--neon-gold);
@@ -388,7 +388,7 @@ body::before {
 /* About Section */
 .about {
   padding: 6rem 0;
-  background: transparent;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.6) 100%);
   position: relative;
 }
 
@@ -456,7 +456,7 @@ body::before {
 /* Tokenomics Section */
 .tokenomics {
   padding: 6rem 0;
-  background: transparent;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.6) 100%);
 }
 
 .tokenomics-grid {
@@ -615,7 +615,7 @@ body::before {
 /* Roadmap Section */
 .roadmap {
   padding: 6rem 0;
-  background: transparent;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.6) 100%);
 }
 
 .roadmap-timeline {
@@ -703,7 +703,7 @@ body::before {
 /* Community Section */
 .community {
   padding: 6rem 0;
-  background: transparent;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.6) 100%);
   text-align: center;
   position: relative;
 }
