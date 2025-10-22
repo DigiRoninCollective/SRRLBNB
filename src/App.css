@@ -768,7 +768,7 @@ body::before {
   border-radius: 50px;
   text-decoration: none;
   font-weight: 700;
-  transition: all 0.3s;
+  transition: transform 0.2s;
   cursor: pointer;
   border: 2px solid;
   font-size: 1rem;
@@ -777,6 +777,7 @@ body::before {
   letter-spacing: 2px;
   position: relative;
   overflow: hidden;
+  will-change: transform;
 }
 
 .btn::before {

@@ -283,8 +283,8 @@ function App() {
                   <motion.a
                     href="#"
                     className="btn btn-large btn-primary"
-                    whileHover={{ scale: 1.1, rotate: 2 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     {t.hero.launchButton}
                   </motion.a>
@@ -342,7 +342,7 @@ function App() {
                       key={i}
                       className="about-card"
                       variants={fadeInUp}
-                      whileHover={{ y: -10, boxShadow: "0 20px 60px rgba(0, 212, 255, 0.4)" }}
+                      whileHover={{ y: -8 }}
                     >
                       <motion.div
                         className="icon"
@@ -535,7 +535,7 @@ function App() {
                       className="social-btn"
                       style={{ background: social.color }}
                       variants={fadeInUp}
-                      whileHover={{ scale: 1.1, y: -5 }}
+                      whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <span style={{ fontSize: '1.5rem', marginRight: '0.5rem' }}>{social.icon}</span>
