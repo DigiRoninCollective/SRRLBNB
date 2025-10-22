@@ -256,23 +256,27 @@ function App() {
                   <div className="contract-address">0x1234567890123456789012345678901234567890</div>
                 </motion.div>
 
-                <motion.p
-                  className="hero-subtitle gradient-text-green"
+                <motion.div
+                  className="hero-subtitle-container"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  {t.hero.subtitle}
-                </motion.p>
+                  <p className="hero-subtitle gradient-text-green">
+                    {t.hero.subtitle}
+                  </p>
+                </motion.div>
 
-                <motion.p
-                  className="hero-description"
+                <motion.div
+                  className="hero-description-container"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
-                  {t.hero.description}
-                </motion.p>
+                  <p className="hero-description">
+                    {t.hero.description}
+                  </p>
+                </motion.div>
 
                 <motion.div
                   className="hero-buttons"
