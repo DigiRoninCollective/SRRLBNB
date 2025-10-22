@@ -201,6 +201,22 @@ function App() {
                   )}
                 </motion.h1>
 
+                {/* SRRL OG Logo */}
+                <motion.img
+                  src="/srrlog.png"
+                  alt="SRRL OG Logo"
+                  className="hero-og-logo"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  style={{
+                    maxWidth: '300px',
+                    height: 'auto',
+                    margin: '2rem 0',
+                    filter: 'drop-shadow(0 0 20px rgba(0, 212, 255, 0.4))'
+                  }}
+                />
+
                 <motion.p
                   className="hero-subtitle gradient-text-green"
                   initial={{ opacity: 0, y: 20 }}
