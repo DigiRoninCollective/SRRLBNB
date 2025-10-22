@@ -19,11 +19,16 @@ function App() {
   // Prevent auto-scroll to anchor on initial load
   useEffect(() => {
     window.history.scrollRestoration = 'manual';
-    // Only scroll to top if there's no hash in URL
-    if (!window.location.hash) {
+    // Scroll to top immediately on mount
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Ensure we stay at top when popup closes and content shows
+  useEffect(() => {
+    if (showContent && !showPopup) {
       window.scrollTo(0, 0);
     }
-  }, []);
+  }, [showContent, showPopup]);
 
   const handleIntroComplete = () => {
     setShowIntro(false);
