@@ -214,6 +214,8 @@ body::before {
   z-index: 2;
   max-width: 900px;
   padding: 3rem;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 15px;
 }
 
 /* OG Logo - Base Styles */
@@ -308,6 +310,9 @@ body::before {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 12px;
 }
 
 .hero-description {
@@ -318,6 +323,9 @@ body::before {
   margin-left: auto;
   margin-right: auto;
   letter-spacing: 1px;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 12px;
 }
 
 .hero-buttons {
@@ -325,6 +333,9 @@ body::before {
   gap: 2rem;
   justify-content: center;
   margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
 }
 
 .hero-stats {
@@ -332,6 +343,9 @@ body::before {
   justify-content: center;
   gap: 4rem;
   margin-top: 2rem;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
 }
 
 .stat {
