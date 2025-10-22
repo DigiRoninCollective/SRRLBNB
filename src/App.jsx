@@ -244,6 +244,17 @@ function App() {
                   }}
                 />
 
+                {/* BSC Contract Address Box */}
+                <motion.div
+                  className="contract-address-box"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <div className="contract-label">BSC Contract Address</div>
+                  <div className="contract-address">0x1234567890123456789012345678901234567890</div>
+                </motion.div>
+
                 <motion.p
                   className="hero-subtitle gradient-text-green"
                   initial={{ opacity: 0, y: 20 }}
