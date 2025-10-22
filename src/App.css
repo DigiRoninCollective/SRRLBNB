@@ -172,7 +172,7 @@ body::before {
 }
 
 .hero-container {
-  background: rgba(0, 0, 0, 0.88);
+  background: #000000 !important;
   padding: 3rem;
   border-radius: 20px;
   border: 3px solid var(--neon-gold);
@@ -181,6 +181,7 @@ body::before {
   z-index: 2;
   max-width: 1000px;
   width: 90%;
+  margin: 0 auto !important;
 }
 
 /* Hero overlay removed - using background image instead */
@@ -213,9 +214,9 @@ body::before {
   text-align: center;
   z-index: 2;
   max-width: 900px;
-  padding: 3rem;
-  background: rgba(0, 0, 0, 0.95);
-  border-radius: 15px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
 }
 
 /* OG Logo - Base Styles */
@@ -305,24 +306,21 @@ body::before {
 }
 
 .hero-subtitle-container {
-  background: rgba(0, 0, 0, 0.85);
-  padding: 1.5rem;
-  border-radius: 12px;
+  padding: 1.5rem 0;
   margin-bottom: 1rem;
 }
 
 .hero-subtitle {
   font-size: 1.8rem;
-  margin-bottom: 0;
+  margin: 0;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
+  padding: 1.5rem;
 }
 
 .hero-description-container {
-  background: rgba(0, 0, 0, 0.85);
-  padding: 2rem;
-  border-radius: 12px;
+  padding: 0;
   margin-bottom: 2rem;
   max-width: 700px;
   margin-left: auto;
@@ -332,8 +330,9 @@ body::before {
 .hero-description {
   font-size: 1.1rem;
   color: #ccc;
-  margin-bottom: 0;
+  margin: 0;
   letter-spacing: 1px;
+  padding: 2rem;
 }
 
 .hero-buttons {
