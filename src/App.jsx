@@ -18,17 +18,19 @@ function App() {
 
   // Prevent auto-scroll to anchor on initial load
   useEffect(() => {
+    // Disable browser scroll restoration immediately
     window.history.scrollRestoration = 'manual';
-    // Scroll to top immediately on mount
-    window.scrollTo(0, 0);
-  }, []);
 
-  // Ensure we stay at top when popup closes and content shows
-  useEffect(() => {
-    if (showContent && !showPopup) {
+    // Scroll to top on mount
+    window.scrollTo(0, 0);
+
+    // Force scroll to top again after a short delay to override any browser restoration
+    const scrollTimer = setTimeout(() => {
       window.scrollTo(0, 0);
-    }
-  }, [showContent, showPopup]);
+    }, 0);
+
+    return () => clearTimeout(scrollTimer);
+  }, []);
 
   const handleIntroComplete = () => {
     setShowIntro(false);
