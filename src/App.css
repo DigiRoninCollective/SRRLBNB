@@ -165,10 +165,10 @@ body::before {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 20vh;
+  padding-top: 150px;
   margin-top: 0;
   background: transparent;
-  scroll-margin-top: 20vh;
+  scroll-margin-top: 150px;
 }
 
 .hero-container {
