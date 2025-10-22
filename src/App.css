@@ -106,6 +106,13 @@ body::before {
   align-items: center;
 }
 
+/* Hide nav-links on mobile, show on desktop */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
+
 .nav-links a {
   color: var(--text-light);
   text-decoration: none;
@@ -803,10 +810,6 @@ section[id] {
 
   .section-title {
     font-size: 2rem;
-  }
-
-  .nav-links {
-    display: none;
   }
 
   .btn-large {
