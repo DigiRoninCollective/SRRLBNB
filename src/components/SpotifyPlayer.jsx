@@ -72,6 +72,16 @@ const SpotifyPlayer = () => {
     handleNext();
   };
 
+  // Calculate responsive drag constraints based on window size
+  const getPlayerWidth = () => {
+    if (window.innerWidth <= 375) return 260;
+    if (window.innerWidth <= 480) return 280;
+    if (window.innerWidth <= 768) return 320;
+    return 380;
+  };
+
+  const playerWidth = getPlayerWidth();
+
   return (
     <motion.div
       className={`spotify-player ${isMinimized ? 'minimized' : ''}`}
@@ -79,7 +89,7 @@ const SpotifyPlayer = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 2, type: "spring" }}
       drag
-      dragConstraints={{ left: 0, right: window.innerWidth - 380, top: 0, bottom: window.innerHeight - 200 }}
+      dragConstraints={{ left: 0, right: Math.max(0, window.innerWidth - playerWidth - 20), top: 0, bottom: window.innerHeight - 200 }}
       dragElastic={0.1}
     >
       {/* Hidden Audio Element */}
